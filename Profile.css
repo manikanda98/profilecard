@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+body{
+    overflow:hidden;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   perspective: 3000px;
+   position: absolute;
+     
+}
+.cover{
+    height: 350px;
+    width: 250px;
+    background-color: black;
+    z-index:2;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  
+}
+
+.cover::after{
+    content: '56789';
+    height: 450px;
+    width: 10px;
+    position: absolute;
+    box-shadow: 10px 10px 50px white;
+    background: transparent;
+    rotate: 35deg;
+   
+
+}
+.cover::before{
+    content: '12345';
+    height: 50px;
+    width: 50px ;
+    color: gold;
+    position: absolute;
+    background-color:transparent;
+    top: 10%;
+    left: 10%;
+    border-radius: 50%;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    animation: rotate 75ms linear infinite normal;
+    box-shadow:1px 1px 10px white,1px 1px 10px rgb(0, 0, 0),1px 1px 5px rgb(255, 0, 0);
+}
+@keyframes rotate {
+     from{
+        rotate: -360deg;
+     }
+    
+}
+.cover p{
+    color:blue;
+    position: absolute;
+    rotate: -55deg;
+    letter-spacing: 5px;
+    font-size: x-large;
+}
+img{
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    box-shadow: 1px 1px 10px #fff,
+      1px 1px 20px #000000,
+     1px 1px 20px #000000,
+     1px 1px 10px #000000;
+}
+
+.cover:hover{
+transform: rotateY(-180deg);
+translate: -100%;
+}
+
+.card
+{   padding-top: 5px;
+    position: absolute;
+    height: 350px;
+    width: 250px;
+    background-color: aqua;
+    box-shadow: 1px 1px 20px black;
+    z-index: 1;
+    display: flex;
+    place-items: center;
+}
+.splash{
+   height: 50px;
+   width: 1px;
+   background-color: #fff;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   rotate: 35deg;
+   top: 320px;
+   animation: bard 750ms linear infinite normal;
+}
+@keyframes bard {
+    from{
+        transform: translateY(-1000%);
+    }
+}
+.heading{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    color: transparent;
+    text-align: center;
+}
+.details{
+    position: absolute;
+    top: 13%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column; 
+    padding: 20px;
+
+}
+p{
+    padding: 5px;
+}
+@media (max-width:600px) {
+    .card{
+        width: 300px;
+    }
+    .cover{
+        width: 300px;
+    }
+}
